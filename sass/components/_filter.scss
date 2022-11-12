@@ -1,0 +1,40 @@
+.filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    list-style: none;
+
+    &__item:not(:last-child) {
+        margin-right: 8px;
+    }
+}
+
+
+
+.filter__button {
+    padding-top: 6px;
+    padding-right: 22px;
+    padding-bottom: 6px;
+    padding-left: 22px;
+
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.62;
+    letter-spacing: 0.03em;
+
+    color: $color-btn-text-dark-gray;
+    background-color: $color-btn-bg-light-gray;
+    
+    @extend %button-style;
+    @include transition(color, background-color, box-shadow);
+
+    &:hover,
+    &:focus {
+        color: $color-text-white;
+        background-color: $color-accent;
+        box-shadow: $shadow-btn-filter;
+    }
+}
+

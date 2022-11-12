@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-text;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+
+    color: $color-text-primary;
+    background-color: $color-bg-white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.link {
+    font-style: normal;
+    text-decoration: none;
+
+    @include transition(color);
+    
+    &:hover,
+    &:focus {
+        color: $color-accent;
+    }
+
+}
+
+
+
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}

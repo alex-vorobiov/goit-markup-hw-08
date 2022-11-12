@@ -1,0 +1,17 @@
+.portfolio__heading--visually-hidden {
+    @extend %visually-hidden;
+}
+
+.portfolio__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    list-style: none;
+}
+
+.portfolio__item {
+    width: 370px;
+
+    background-color: $color-bg-white;
+}
