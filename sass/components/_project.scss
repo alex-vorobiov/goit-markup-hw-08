@@ -8,64 +8,65 @@
     &:focus {
         box-shadow: $shadow-project;
     }
-}
 
-.project__thumb {
-    position: relative;
-    overflow: hidden;
-}
+    &__thumb {
+        position: relative;
+        overflow: hidden;
+    }
 
-.project__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
 
-    padding: 63px 24px;
+        padding: 77px 24px;
 
-    background-color: $color-bg-overlay;
+        background-color: $color-bg-overlay;
 
-    transform: translateY(100%);
-    
-    @include transition(transform);
+        transform: translateY(100%);
 
-    .project:hover & {
-        transform: translateY(0);
+        @include transition(transform);
+
+        .project:hover & {
+            transform: translateY(0);
+        }
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 1.56;
+
+        color: $color-text-white;
+    }
+
+    &__meta {
+        padding-top: 20px;
+        padding-right: 24px;
+        padding-bottom: 20px;
+        padding-left: 24px;
+
+        border-right: 1px solid $color-border-light;
+        border-bottom: 1px solid $color-border-light;
+        border-left: 1px solid $color-border-light;
+
+    }
+
+    &__title {
+        margin-bottom: 4px;
+
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 2;
+        letter-spacing: 0.06em;
+        color: $color-text-title;
+    }
+
+    &__description {
+        font-size: 16px;
+        line-height: 1.88;
+        color: $color-text-primary;
     }
 }
 
-.project__text {
-    font-size: 18px;
-    line-height: 1.56;
-
-    color: $color-text-white;
-}
-
-.project__meta {
-    padding-top: 20px;
-    padding-right: 24px;
-    padding-bottom: 20px;
-    padding-left: 24px;
-
-    border-right: 1px solid $color-border-light;
-    border-bottom: 1px solid $color-border-light;
-    border-left: 1px solid $color-border-light;
-
-}
-
-.project__title {
-    margin-bottom: 4px;
-
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 2;
-    letter-spacing: 0.06em;
-    color: $color-text-title;
-}
-
-.project__description {
-    font-size: 16px;
-    line-height: 1.88;
-    color: $color-text-primary;
-}

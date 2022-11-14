@@ -3,15 +3,11 @@
 }
 
 .portfolio__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-
     list-style: none;
 }
 
 .portfolio__item {
-    width: 370px;
-
+    width: 100%;
     background-color: $color-bg-white;
+    margin-bottom: 30px;
 }

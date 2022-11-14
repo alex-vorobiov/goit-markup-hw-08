@@ -1,54 +1,59 @@
 .hero {
-    max-width: 1600px;
-    height: 600px;
+    max-width: 480px;
+    height: 400px;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 200px;
-    padding-bottom: 200px;
+    padding-top: 118px;
+    padding-bottom: 118px;
 
     text-align: center;
 
     background-color: $color-bg-header;
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4),
-            rgba(47, 48, 58, 0.4)),
-        url(../images/hero.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
+    // background-image: linear-gradient(rgba(47, 48, 58, 0.4),
+    //         rgba(47, 48, 58, 0.4)),
+    //     url(../images/hero.jpg);
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // background-size: cover;
 
-.hero__heading {
-    max-width: 696px;
-    margin-top: 0;
-    margin-right: auto;
-    margin-bottom: 30px;
-    margin-left: auto;
+    // @media screen and (min-width: 480px) {
+    //     width: 480px;
+    // }
+
+    &__heading {
+        max-width: 360px;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 30px;
+        margin-left: auto;
     
-    font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36;
-    letter-spacing: 0.06em;
-
-    color: $color-text-white;
-    text-transform: uppercase;
-}
-
-.hero__button {
-    padding-top: 10px;
-    padding-right: 32px;
-    padding-bottom: 10px;
-    padding-left: 32px;
-
-    @extend %text-main-button;
-
-    @extend %button-style;
+        font-weight: 900;
+        font-size: 26px;
+        line-height: 1.62;
+        letter-spacing: 0.06em;
     
-    @include transition(background-color, box-shadow);
+        color: $color-text-white;
+        text-transform: uppercase;
+    }
 
-    &:hover,
-    &:focus {
-        background-color: $color-btn-bg-hover;
+    &__button {
+        padding-top: 10px;
+        padding-right: 24px;
+        padding-bottom: 10px;
+        padding-left: 24px;
+
+        @extend %text-main-button;
+
+        @extend %button-style;
+
+        @include transition(background-color);
+
         box-shadow: $shadow-btn-hero;
+
+        &:hover,
+        &:focus {
+            background-color: $color-btn-bg-hover;
+        }
     }
 }
 

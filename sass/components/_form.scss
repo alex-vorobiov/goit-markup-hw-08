@@ -3,7 +3,7 @@
 
     font-weight: 700;
     font-size: 20px;
-    line-height: 1.15;
+    line-height: 1.5;
     text-align: center;
 
     color: $color-text-title;
@@ -30,9 +30,9 @@
 
 .form__input {
     width: 100%;
-    padding-top: 11px;
+    padding-top: 12px;
     padding-right: 12px;
-    padding-bottom: 11px;
+    padding-bottom: 12px;
     padding-left: 42px;
 
     border: 1px solid $color-border-dark-gray;
@@ -45,8 +45,6 @@
         border-color: $color-accent;
     }
 }
-
-
 
 .form__icon {
     position: absolute;
@@ -63,10 +61,10 @@
     }
 }
 
-
 .form__textarea {
     width: 100%;
     height: 120px;
+    
     margin-bottom: 20px;
 
     padding: 12px 16px;
@@ -85,8 +83,8 @@
     font-family: inherit;
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
-    line-height: 1.16;
+    font-size: 14px;
+    line-height: 1.14;
     letter-spacing: 0.01em;
 
     color: $color-text-modal-placeholder;
@@ -114,7 +112,8 @@
     height: 15px;
     position: absolute;
     top: 50%;
-    left: 12px;
+    left: 0;
+
     transform: translateY(-50%);
     border: 2px solid $color-border-flag;
     border-radius: 2px;
@@ -126,25 +125,10 @@
     }
 }
 
-
-
-.form__label-flag {
-    padding-left: 35px;
-
-    line-height: 1.71;
-}
-
-.form__terms-link {
-    line-height: 1.71;
-
-    color: #2196F3;
-}
-
-
 .form__icon-check {
     position: absolute;
     top: 50%;
-    left: 12px;
+    left: 0;
     transform: translateY(-50%);
     fill: $color-text-white;
 
@@ -152,12 +136,23 @@
 
     @include transition(background-color);
 
-    .form__checkbox:checked ~ & {
+    .form__checkbox:checked~& {
         background-color: $color-accent;
     }
 }
 
+.form__label-flag {
+    padding-left: 24px;
+    font-size: 12px;
+    line-height: 1.16;
+}
 
+.form__terms-link {
+    font-size: 12px;
+    line-height: 1.16;
+    
+    color: #2196F3;
+}
 
 .form__button {
     display: block;
@@ -172,12 +167,11 @@
 
     @extend %button-style;
 
-    @include transition(background-color, box-shadow);
+    @include transition(background-color);
 
     &:hover,
     &:focus {
         background-color: $color-btn-bg-hover;
-        box-shadow: $shadow-btn-form;
     }
 }
 

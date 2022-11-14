@@ -6,6 +6,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
     z-index: 1;
+    overflow-y: scroll;
     
     @include transition(opacity, visibility);
 
@@ -20,11 +21,12 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    padding: 40px;
-    width: 528px;
-    max-height: 581px;
-    height: 100%;
 
+    padding: 40px;
+
+    max-width: 450px;
+    width: calc(100vw - 30px);
+    
     transform: translate(-50%, -50%) scale(1);
  
     @include transition(transform);
@@ -37,32 +39,31 @@
         fill: currentColor;
     }
 
+    &__button {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 8px;
+        right: 8px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: $color-btn-text-black;
+
+        cursor: pointer;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: $color-bg-white;
+        border-radius: 50%;
+        @include transition(color);
+
+        &:hover {
+            color: $color-accent;
+        }
+    }
+
     .backdrop.is-hidden & {
         transform: translate(-50%, -50%) scale(1.2);
-    }
-}
-
-
-.modal__button {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    top: 8px;
-    right: 8px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: $color-btn-text-black;
-
-    cursor: pointer;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: $color-bg-white;
-    border-radius: 50%;
-    @include transition(color);
-
-    &:hover {
-        color: $color-accent;
     }
 }
