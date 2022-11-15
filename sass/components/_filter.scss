@@ -1,13 +1,20 @@
 .filter {
     display: flex;
     flex-wrap: wrap;
+    gap: 8px;
     row-gap: 15px;
-    
+    justify-content: start;
+
     margin-bottom: 40px;
     list-style: none;
 
-    &__item:not(:last-child) {
-        margin-right: 8px;
+    @media screen and (min-width: $tablet) {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 50px;
     }
 }
 
@@ -39,10 +46,9 @@
         box-shadow: $shadow-btn-filter;
     }
 
-    &:first-child {
-        padding-top: 6px;
-        padding-right: 25px;
-        padding-bottom: 6px;
+    &--wider {
         padding-left: 25px;
+        padding-right: 25px;
     }
 }
+

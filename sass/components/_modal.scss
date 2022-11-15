@@ -27,6 +27,10 @@
     max-width: 450px;
     width: calc(100vw - 30px);
     
+    @media screen and (min-width: $desktop) {
+        max-width: 528px;
+    }
+
     transform: translate(-50%, -50%) scale(1);
  
     @include transition(transform);

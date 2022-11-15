@@ -1,5 +1,8 @@
 .invitation {
     text-align: center;
+    @media screen and (min-width: $desktop) {
+        text-align: start;
+    }
 
     &__label {
         margin-bottom: 20px;

@@ -7,6 +7,10 @@
     text-align: center;
 
     color: $color-text-title;
+
+    @media screen and (min-width: $desktop) {
+        line-height: 1.15;
+    }
 }
 
 .form__field {
@@ -114,6 +118,10 @@
     top: 50%;
     left: 0;
 
+    @media screen and (min-width: $desktop) {
+        left: 12px;
+    }
+
     transform: translateY(-50%);
     border: 2px solid $color-border-flag;
     border-radius: 2px;
@@ -129,6 +137,10 @@
     position: absolute;
     top: 50%;
     left: 0;
+
+    @media screen and (min-width: $desktop) {
+        left: 12px;
+    }
     transform: translateY(-50%);
     fill: $color-text-white;
 
@@ -142,16 +154,33 @@
 }
 
 .form__label-flag {
+    display: block;
     padding-left: 24px;
+    text-align: start;
+
     font-size: 12px;
     line-height: 1.16;
+
+    @media screen and (min-width: $desktop) {
+            padding-left: 36px;
+        }
+
+    @media screen and (min-width: $desktop) {
+        font-size: 14px;
+        line-height: 1.71;
+    }
 }
 
 .form__terms-link {
     font-size: 12px;
     line-height: 1.16;
-    
+
     color: #2196F3;
+
+    @media screen and (min-width: $desktop) {
+        font-size: 14px;
+        line-height: 1.71;
+    }
 }
 
 .form__button {

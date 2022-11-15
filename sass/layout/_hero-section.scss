@@ -16,9 +16,18 @@
     // background-position: center;
     // background-size: cover;
 
-    // @media screen and (min-width: 480px) {
-    //     width: 480px;
-    // }
+
+    @media screen and (min-width: $tablet) {
+        max-width: 768px;
+    }
+    @media screen and (min-width: $desktop) {
+        max-width: 1600px;
+        height: 600px;
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+
+
 
     &__heading {
         max-width: 360px;
@@ -34,6 +43,12 @@
     
         color: $color-text-white;
         text-transform: uppercase;
+
+        @media screen and (min-width: $desktop) {
+            max-width: 696px;
+            font-size: 44px;
+            line-height: 1.36;
+        }
     }
 
     &__button {
@@ -41,6 +56,11 @@
         padding-right: 24px;
         padding-bottom: 10px;
         padding-left: 24px;
+
+        @media screen and (min-width: $desktop) {
+            padding-left: 32px;
+            padding-right: 32px;
+        }
 
         @extend %text-main-button;
 

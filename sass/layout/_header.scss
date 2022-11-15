@@ -8,7 +8,7 @@
         display: flex;
         
         align-items: center;
-
+        
         @media screen and (max-width: 767px) {
             justify-content: space-between;
         }
@@ -30,3 +30,120 @@
         }
     }
 }
+
+.menu-container {
+    display: none;
+
+
+    // position: absolute;
+    // top: 100%;
+    // left: 0;
+    // width: 100%;
+
+    // padding: 48px 40px;
+    // background-color: $color-bg-white;
+    // @media screen and (max-width: 767px) {
+    //     display: none;
+
+    // }
+
+    @media screen and (min-width: $tablet) {
+        display: flex;
+        align-items: center;
+        margin-left: 87px;
+        width: 100%;
+    }
+}
+
+
+.site-nav {
+    display: flex;
+    list-style: none;
+
+    &__link {
+        display: block;
+        padding-top: 32px;
+        padding-bottom: 32px;
+
+        font-weight: 500;
+        line-height: 1.14;
+        letter-spacing: 0.02em;
+    }
+
+    &__link {
+        color: $color-link-dark-gray;
+    }
+
+    &__link--current {
+        position: relative;
+        color: $color-accent;
+    }
+
+    &__link--current::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $color-accent;
+    }
+
+    &__item:not(:last-child) {
+        margin-right: 50px;
+    }
+}
+
+
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: auto;
+    list-style: none;
+    
+    @media screen and (min-width: $desktop) {
+        flex-direction: row;
+        
+    }
+
+    &__item:not(:last-child) {
+        @media screen and (min-width: $desktop) {
+            margin-right: 30px;
+        }
+    }
+    
+    &__link {
+        display: flex;
+        align-items: center;
+        color: $color-link-gray;
+        gap: 8px;
+
+
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.16;
+        letter-spacing: 0.02em;
+
+        @media screen and (min-width: $desktop) {
+            font-size: 14px;
+            line-height: 1.14;
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
+    }
+
+    &__box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__icon {
+        fill: currentColor;
+    }
+}
+

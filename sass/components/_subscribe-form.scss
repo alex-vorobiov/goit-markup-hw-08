@@ -5,6 +5,27 @@
     align-items: center;
     gap: 20px;
 
+    @media screen and (min-width: $desktop) {
+        width: 570px;
+        flex-direction: row;
+        margin-left: auto;
+        align-items: flex-end;
+        gap: 12px;
+        }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+
+        @media screen and (min-width: $desktop) {
+            align-items: flex-start;
+        }
+
+    }
+
     &__label {
         font-weight: 700;
         line-height: 1.14;
@@ -13,7 +34,13 @@
     }
 
     &__input {
+        max-width: 450px;
         width: 100%;
+
+        @media screen and (min-width: $desktop) {
+            width: 358px;
+        }
+
         height: 50px;
         padding: 15px 16px;
 

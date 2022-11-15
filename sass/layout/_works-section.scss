@@ -1,6 +1,10 @@
 .works {
     display: none;
 
+    @media screen and (min-width: $desktop) {
+        display: block;
+    }
+    
     &__heading {
         margin-bottom: 50px;
         text-align: center;

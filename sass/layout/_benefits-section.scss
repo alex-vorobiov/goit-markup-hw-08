@@ -1,19 +1,37 @@
 .benefits {
+    @media screen and (min-width: $desktop) {
+        padding-bottom: 0;
+    }
+
     &__heading--visually-hidden {
         @extend %visually-hidden;
     }
 
     &__list {
         list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+
+       
     }
 
     &__item {
         width: 100%;
+
+        @media screen and (min-width: $tablet) {
+            flex-basis: calc((100% - 30px) / 2);
+        }
+
+        @media screen and (min-width: $desktop) {
+            flex-basis: calc((100% - 90px) / 4);
+        }
     }
 
-    &__item:not(:last-child) {
-        margin-bottom: 30px;
-    }
+
+    // &__item:not(:last-child) {
+    //     margin-bottom: 30px;
+    // }
 
     &__wrapper {
         display: flex;
