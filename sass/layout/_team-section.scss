@@ -19,9 +19,12 @@
 
     &__list {
         list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
+
+        @media screen and (min-width: $tablet) {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
     }
 
     &__item {
@@ -36,6 +39,12 @@
         background-color: $color-bg-white;
         box-shadow: $shadow-team-item;
         border-radius: 0px 0px 4px 4px;
+    }
+
+    &__item:not(:last-child) {
+        @media screen and (max-width: 767px) {
+            margin-bottom: 30px;
+        }
     }
 
     &__content {
