@@ -55,7 +55,7 @@ img {
     padding-top: 60px;
     padding-bottom: 60px;
 
-    @media screen and (min-width: $desktop) {
+    @include for-desktop-up {
         padding-top: 94px;
         padding-bottom: 94px;
     }

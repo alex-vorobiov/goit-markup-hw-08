@@ -1,5 +1,5 @@
 .benefits {
-    @media screen and (min-width: $desktop) {
+    @include for-desktop-up {
         padding-bottom: 0;
     }
 
@@ -10,7 +10,7 @@
     &__list {
         list-style: none;
 
-        @media screen and (min-width: $tablet) {
+        @include for-tablet-up {
             display: flex;
             flex-wrap: wrap;
             gap: 30px;
@@ -20,18 +20,18 @@
     &__item {
         width: 100%;
 
-        @media screen and (min-width: $tablet) {
+        @include for-tablet-up {
             flex-basis: calc((100% - 30px) / 2);
         }
 
-        @media screen and (min-width: $desktop) {
+        @include for-desktop-up {
             flex-basis: calc((100% - 90px) / 4);
         }
     }
 
 
     &__item:not(:last-child) {
-        @media screen and (max-width: 767px) {
+        @include for-mobile-only {
             margin-bottom: 30px;
         }
     }

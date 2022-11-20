@@ -10,11 +10,11 @@
 }
 
 .portfolio__item {
-    @media screen and (min-width: $tablet) {
+    @include for-tablet-only {
             flex-basis: calc((100% - 30px) / 2);
     }
 
-    @media screen and (min-width: $desktop) {
+    @include for-desktop-up {
         flex-basis: calc((100% - 60px) / 3);
     }
     background-color: $color-bg-white;

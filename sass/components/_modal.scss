@@ -11,7 +11,7 @@
     
     @include transition(opacity, visibility);
 
-    @media screen and (max-width: $tablet) {
+    @include for-mobile-only {
         padding: 15px;
     }
 
@@ -38,22 +38,22 @@
 
     @include transition(transform);
     
-    @media screen and (max-width: $tablet) {
+    @include for-mobile-only {
         margin: 0 auto;
     }
 
-    @media screen and (min-width: $mobile) {
+    @include for-mobile-up {
         max-height: 609px;
     }
 
-    @media screen and (min-width: $tablet) {
+    @include for-tablet-up {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) scale(1);
     }
 
-    @media screen and (min-width: $desktop) {
+    @include for-desktop-up {
         max-width: 528px;
         max-height: 581px;
     }
@@ -89,7 +89,7 @@
     .backdrop.is-hidden & {
         transform: scale(1.2);
 
-        @media screen and (min-width: $tablet) {
+        @include for-tablet-up {
             transform: translate(-50%, -50%) scale(1.2);
         }
     }

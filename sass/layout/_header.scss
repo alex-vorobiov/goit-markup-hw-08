@@ -9,7 +9,7 @@
         
         align-items: center;
         
-        @media screen and (max-width: 767px) {
+        @include for-mobile-only {
             justify-content: space-between;
         }
     }
@@ -17,6 +17,16 @@
     &__logo {
         padding-top: 16px;
         padding-bottom: 16px;
+
+        @include for-tablet-up {
+            padding-top: 26px;
+            padding-bottom: 26px;
+        }
+
+        @include for-desktop-up {
+            padding-top: 24px;
+            padding-bottom: 25px;
+        }
     }
 
     &__half-logo {
@@ -29,29 +39,16 @@
             color: $color-accent;
         }
     }
-}
 
-.menu-container {
-    display: none;
+    &__container {
+        display: none;
 
-
-    // position: absolute;
-    // top: 100%;
-    // left: 0;
-    // width: 100%;
-
-    // padding: 48px 40px;
-    // background-color: $color-bg-white;
-    // @media screen and (max-width: 767px) {
-    //     display: none;
-
-    // }
-
-    @media screen and (min-width: $tablet) {
-        display: flex;
-        align-items: center;
-        margin-left: 87px;
-        width: 100%;
+        @include for-tablet-up {
+            display: flex;
+            align-items: center;
+            margin-left: 87px;
+            width: 100%;
+        }
     }
 }
 
@@ -105,30 +102,32 @@
     margin-left: auto;
     list-style: none;
     
-    @media screen and (min-width: $desktop) {
+    @include for-desktop-up {
         flex-direction: row;
         
     }
 
     &__item:not(:last-child) {
-        @media screen and (min-width: $desktop) {
+        @include for-desktop-up {
             margin-right: 30px;
         }
     }
     
     &__link {
-        display: flex;
-        align-items: center;
-        color: $color-link-gray;
-        gap: 8px;
-
-
         font-weight: 500;
         font-size: 12px;
         line-height: 1.16;
         letter-spacing: 0.02em;
 
-        @media screen and (min-width: $desktop) {
+        color: $color-link-gray;
+
+        @include for-tablet-up {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        @include for-desktop-up {
             font-size: 14px;
             line-height: 1.14;
             padding-top: 32px;

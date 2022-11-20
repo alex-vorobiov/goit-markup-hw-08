@@ -8,7 +8,7 @@
 
     color: $color-text-title;
 
-    @media screen and (min-width: $desktop) {
+    @include for-desktop-up {
         line-height: 1.15;
     }
 }
@@ -118,7 +118,7 @@
     top: 50%;
     left: 0;
 
-    @media screen and (min-width: $desktop) {
+    @include for-desktop-up {
         left: 12px;
     }
 
@@ -138,7 +138,7 @@
     top: 50%;
     left: 0;
 
-    @media screen and (min-width: $desktop) {
+    @include for-desktop-up {
         left: 12px;
     }
     transform: translateY(-50%);
@@ -161,14 +161,11 @@
     font-size: 12px;
     line-height: 1.16;
 
-    @media screen and (min-width: $desktop) {
+    @include for-desktop-up {
             padding-left: 36px;
+            font-size: 14px;
+            line-height: 1.71;
         }
-
-    @media screen and (min-width: $desktop) {
-        font-size: 14px;
-        line-height: 1.71;
-    }
 }
 
 .form__terms-link {
@@ -177,7 +174,7 @@
 
     color: #2196F3;
 
-    @media screen and (min-width: $desktop) {
+    @include for-desktop-up {
         font-size: 14px;
         line-height: 1.71;
     }

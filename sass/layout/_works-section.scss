@@ -1,7 +1,7 @@
 .works {
     display: none;
 
-    @media screen and (min-width: $desktop) {
+    @include for-desktop-up {
         display: block;
     }
     

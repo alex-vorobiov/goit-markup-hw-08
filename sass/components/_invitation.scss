@@ -1,6 +1,7 @@
 .invitation {
     text-align: center;
-    @media screen and (min-width: $desktop) {
+
+    @include for-desktop-up {
         text-align: start;
     }
 

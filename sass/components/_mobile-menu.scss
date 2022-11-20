@@ -1,31 +1,189 @@
-
-
-
-
 .menu-button {
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 0;
     border: none;
     background-color: transparent;
 
-    @media screen and (min-width: $tablet) {
+    @include for-tablet-up{
         display: none;
     }
 }
 
-.menu-button .icon-cross {
-    display: none;
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-color: $color-bg-white;
+    box-shadow: $shadow-mobile-menu;
+
+    z-index: 1;
+
+    transform: translateX(100%);
+    @include transition(transform);
+
+    &.is-open {
+        transform: translateX(0);
+    }
+
+    &__icon {
+        fill: currentColor;
+    }
+
+    &__close-button {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        @include transition(color);
+
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            color: $color-accent;
+        }
+    }
+
+    &__nav {
+        width: 100%;
+        height: 100%;
+        
+        padding-top: 40px;
+        padding-right: 40px;
+        padding-bottom: 40px;
+        padding-left: 40px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @media screen and (max-width: 479px) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
 }
 
-.menu-button.is-open .icon-cross {
+.mobile-nav,
+.mobile-contacts,
+.mobile-social {
+    list-style: none;
+}
+
+
+.mobile-nav__item:not(:last-child) {
+    margin-bottom: 16px ;
+}
+
+.mobile-nav__link {
     display: block;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+
+    color: $color-link-dark-gray;
+
+    &--current {
+        color: $color-accent;
+    }
+
+    @media screen and (max-width: 479px) {
+        font-size: 8.3vmin;
+    }
 }
 
-.menu-button.is-open .icon-menu {
-    display: none;
+
+
+.mobile-contacts {
+    margin-bottom: 48px;
 }
 
+.mobile-contacts__item:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.mobile-contacts__phone {
+    display: block;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    
+    color: $color-accent;
+    @media screen and (max-width: 479px) {
+            font-size: 7vmin;
+        }
+}
+
+.mobile-contacts__email {
+    display: block;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.16;
+    letter-spacing: 0.02em;
+
+    color: $color-link-gray;
+
+    @media screen and (max-width: 479px) {
+        font-size: 5vmin;
+    }
+}
+
+.mobile-social {
+    display: inline-flex;
+    gap: 20px;
+}
+
+.mobile-social__link {
+    position: relative;
+    display: inline-block;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: 0.02em;
+    color: $color-accent;
+
+    @media screen and (max-width: 479px) {
+        font-size: 3.5vmin;
+    }
+}
+
+.link-line::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -10px;
+
+    width: 1px;
+    height: 22px;
+
+    background-color: $color-border-dark-gray;
+}
 
 
 

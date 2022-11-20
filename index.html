@@ -15,65 +15,62 @@
     <!-- Шапка сторінки -->
     <header class="header">
       <div class="container">
-        <div class="header__container">
-          <nav class="header__nav">
-            <a class="logo header__logo link" href="./index.html">
-              Web<span class="header__half-logo">Studio</span></a
-            >
-            <button
-              type="button"
-              class="menu-button"
-              aria-expanded="false"
-              aria-controls="menu-container"
-              aria-label="Перемикач мобільного меню"
-            >
-              <svg width="40" height="40">
-                <use class="icon-menu" href="./images/icons.svg#icon-menu"></use>
-                <use class="icon-cross" href="./images/icons.svg#icon-cross"></use>
-              </svg>
-            </button>
-            <div class="menu-container" id="menu-container">
-              <ul class="site-nav">
-                <li class="site-nav__item">
-                  <a
-                    href="./index.html"
-                    class="site-nav__link site-nav__link--current link"
-                    aria-current="true"
-                    >Студія</a
-                  >
-                </li>
-                <li class="site-nav__item">
-                  <a href="./portfolio.html" class="site-nav__link link">Портфоліо</a>
-                </li>
-                <li class="site-nav__item">
-                  <a href="./contacts" class="site-nav__link link">Контакти</a>
-                </li>
-              </ul>
-              <ul class="contacts">
-                <li class="contacts__item">
-                  <a href="mailto:info@devstudio.com" class="contacts__link link">
-                    <div class="contacts__box">
-                      <svg class="contacts__icon" width="16" height="12">
-                        <use href="./images/icons.svg#icon-envelope"></use>
-                      </svg>
-                    </div>
-                    info@devstudio.com</a
-                  >
-                </li>
-                <li class="contacts__item">
-                  <a href="tel:+380961111111" class="contacts__link link">
-                    <div class="contacts__box">
-                      <svg class="contacts__icon" width="10" height="16">
-                        <use href="./images/icons.svg#icon-smartphone"></use>
-                      </svg>
-                    </div>
-                    +38 096 111 11 11</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+        <nav class="header__nav">
+          <a class="logo header__logo link" href="./index.html">
+            Web<span class="header__half-logo">Studio</span></a
+          >
+          <button
+            type="button"
+            class="menu-button js-open-menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Перемикач мобільного меню"
+          >
+            <svg width="40" height="40">
+              <use class="icon-menu" href="./images/icons.svg#icon-menu"></use>
+            </svg>
+          </button>
+          <div class="header__container">
+            <ul class="site-nav">
+              <li class="site-nav__item">
+                <a
+                  href="./index.html"
+                  class="site-nav__link site-nav__link--current link"
+                  aria-current="true"
+                  >Студія</a
+                >
+              </li>
+              <li class="site-nav__item">
+                <a href="./portfolio.html" class="site-nav__link link">Портфоліо</a>
+              </li>
+              <li class="site-nav__item">
+                <a href="./contacts" class="site-nav__link link">Контакти</a>
+              </li>
+            </ul>
+            <ul class="contacts">
+              <li class="contacts__item">
+                <a href="mailto:info@devstudio.com" class="contacts__link link">
+                  <div class="contacts__box">
+                    <svg class="contacts__icon" width="16" height="12">
+                      <use href="./images/icons.svg#icon-envelope"></use>
+                    </svg>
+                  </div>
+                  info@devstudio.com</a
+                >
+              </li>
+              <li class="contacts__item">
+                <a href="tel:+380961111111" class="contacts__link link">
+                  <div class="contacts__box">
+                    <svg class="contacts__icon" width="10" height="16">
+                      <use href="./images/icons.svg#icon-smartphone"></use>
+                    </svg>
+                  </div>
+                  +38 096 111 11 11</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
     </header>
     <!-- Основна частина -->
@@ -143,34 +140,85 @@
           <h2 class="works__heading">Чим ми займаємося</h2>
           <ul class="works__list">
             <li class="works__item">
-              <img
-                src="./images/work1.jpg"
-                alt="Програміст пише код згідно технічного завдання"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/desktop/works/work1.webp    1x,
+                    ./images/desktop/works/work1@2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/desktop/works/work1.jpg    1x,
+                    ./images/desktop/works/work1@2x.jpg 2x
+                  "
+                  type="image/jpeg"
+                />
+                <img
+                  src="./images/desktop/works/work1.jpg"
+                  alt="Програміст пише код згідно технічного завдання"
+                  width="370"
+                  height="294"
+                  loading="lazy"
+                />
+              </picture>
               <div class="works__wrap">
                 <p class="works__description">Десктопні додатки</p>
               </div>
             </li>
             <li class="works__item">
-              <img
-                src="./images/work2.jpg"
-                alt="Програміст оптимізує застосунок для мобільних пристроїв"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/desktop/works/work2.webp    1x,
+                    ./images/desktop/works/work2@2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/desktop/works/work2.jpg    1x,
+                    ./images/desktop/works/work2@2x.jpg 2x
+                  "
+                  type="image/jpeg"
+                />
+                <img
+                  src="./images/desktop/works/work2.jpg"
+                  alt="Програміст пише код згідно технічного завдання"
+                  width="370"
+                  height="294"
+                  loading="lazy"
+                />
+              </picture>
               <div class="works__wrap">
                 <p class="works__description">Мобільні додатки</p>
               </div>
             </li>
             <li class="works__item">
-              <img
-                src="./images/work3.jpg"
-                alt="Дизайнер вибирає колір на планшеті з палітрою"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/desktop/works/work3.webp    1x,
+                    ./images/desktop/works/work3@2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/desktop/works/work3.jpg    1x,
+                    ./images/desktop/works/work3@2x.jpg 2x
+                  "
+                  type="image/jpeg"
+                />
+                <img
+                  src="./images/desktop/works/work3.jpg"
+                  alt="Програміст пише код згідно технічного завдання"
+                  width="370"
+                  height="294"
+                  loading="lazy"
+                />
+              </picture>
               <div class="works__wrap">
                 <p class="works__description">Дизайнерські рішення</p>
               </div>
@@ -184,13 +232,63 @@
           <h2 class="team__heading">Наша команда</h2>
           <ul class="team__list">
             <li class="team__item">
-              <img src="./images/ihor.jpg" alt="фото Ігора Дем'яненко" width="450" height="460" />
-              <!-- <img
-                srcset="./images/ihor.jpg 300w, ./images/ihor.jpg 600w, ./images/ihor.jpg.jpg 1200w"
-                sizes="100px"
-                src="./images/ihor.jpg"
-                alt="Опис зображення для всіх версій"
-              /> -->
+              <picture>
+                <source
+                  srcset="
+                    ./images/desktop/team/igor.webp    270w,
+                    ./images/desktop/team/igor@2x.webp 540w
+                  "
+                  type="image/webp"
+                  media="(min-width: 1200px)"
+                  sizes="270px"
+                />
+                <source
+                  srcset="
+                    ./images/tablet/team/igor.webp    354w,
+                    ./images/tablet/team/igor@2x.webp 708w
+                  "
+                  type="image/webp"
+                  media="(min-width: 768px)"
+                  sizes="354px"
+                />
+                <source
+                  srcset="
+                    ./images/mobile/team/igor.webp    450w,
+                    ./images/mobile/team/igor@2x.webp 900w
+                  "
+                  type="image/webp"
+                  media="(max-width: 767px)"
+                  sizes="450px"
+                />
+                <source
+                  srcset="
+                    ./images/desktop/team/igor.jpg    270w,
+                    ./images/desktop/team/igor@2x.jpg 540w
+                  "
+                  type="image/jpeg"
+                  media="(min-width: 1200px)"
+                  sizes="270px"
+                />
+                <source
+                  srcset="
+                    ./images/tablet/team/igor.jpg    354w,
+                    ./images/tablet/team/igor@2x.jpg 708w
+                  "
+                  type="image/jpeg"
+                  media="(min-width: 768px)"
+                  sizes="354px"
+                />
+                <source
+                  srcset="
+                    ./images/mobile/team/igor.jpg    450w,
+                    ./images/mobile/team/igor@2x.jpg 900w
+                  "
+                  type="image/jpeg"
+                  media="(max-width: 767px)"
+                  sizes="450px"
+                />
+                <img src="./images/mobile/team/igor.jpg" alt="фото Ігора Дем'яненко" />
+              </picture>
               <div class="team__content">
                 <h3 class="team__title">Ігор Дем'яненко</h3>
                 <p lang="en" class="team__text">Product Designer</p>
@@ -227,7 +325,63 @@
               </div>
             </li>
             <li class="team__item">
-              <img src="./images/olga.jpg" alt="фото Ольги Рєпіной" width="450" height="460" />
+              <picture>
+                <source
+                  srcset="
+                    ./images/desktop/team/olga.webp    270w,
+                    ./images/desktop/team/olga@2x.webp 540w
+                  "
+                  type="image/webp"
+                  media="(min-width: 1200px)"
+                  sizes="270px"
+                />
+                <source
+                  srcset="
+                    ./images/tablet/team/olga.webp    354w,
+                    ./images/tablet/team/olga@2x.webp 708w
+                  "
+                  type="image/webp"
+                  media="(min-width: 768px)"
+                  sizes="354px"
+                />
+                <source
+                  srcset="
+                    ./images/mobile/team/olga.webp 450w,
+                    ./images/mobile/team/olga@2x.webp 900w
+                  "
+                  type="image/webp"
+                  media="(max-width: 767px)"
+                  sizes="450px"
+                />
+                <source
+                  srcset="
+                    ./images/desktop/team/olga.jpg    270w,
+                    ./images/desktop/team/olga@2x.jpg 540w
+                  "
+                  type="image/jpeg"
+                  media="(min-width: 1200px)"
+                  sizes="270px"
+                />
+                <source
+                  srcset="
+                    ./images/tablet/team/olga.jpg    354w,
+                    ./images/tablet/team/olga@2x.jpg 708w
+                  "
+                  type="image/jpeg"
+                  media="(min-width: 768px)"
+                  sizes="354px"
+                />
+                <source
+                  srcset="
+                    ./images/mobile/team/olga.jpg    450w,
+                    ./images/mobile/team/olga@2x.jpg 900w
+                  "
+                  type="image/jpeg"
+                  media="(max-width: 767px)"
+                  sizes="450px"
+                />
+                <img src="./images/mobile/team/olga.jpg" alt="фото Ольги Рєпіной" />
+              </picture>
               <div class="team__content">
                 <h3 class="team__title">Ольга Рєпіна</h3>
                 <p lang="en" class="team__text">Frontend Developer</p>
@@ -264,7 +418,64 @@
               </div>
             </li>
             <li class="team__item">
-              <img src="./images/mykola.jpg" alt="фото Миколи Тарасова" width="450" height="460" />
+              <picture>
+                <source
+                  srcset="
+                    ./images/desktop/team/mykola.webp    270w,
+                    ./images/desktop/team/mykola@2x.webp 540w
+                  "
+                  type="image/webp"
+                  media="(min-width: 1200px)"
+                  sizes="270px"
+                />
+                <source
+                  srcset="
+                    ./images/tablet/team/mykola.webp    354w,
+                    ./images/tablet/team/mykola@2x.webp 708w
+                  "
+                  type="image/webp"
+                  media="(min-width: 768px)"
+                  sizes="354px"
+                />
+                <source
+                  srcset="
+                    ./images/mobile/team/mykola.webp    450w,
+                    ./images/mobile/team/mykola@2x.webp 900w
+                  "
+                  type="image/webp"
+                  media="(max-width: 767px)"
+                  sizes="450px"
+                />
+                <source
+                  srcset="
+                    ./images/desktop/team/mykola.jpg    270w,
+                    ./images/desktop/team/mykola@2x.jpg 540w
+                  "
+                  type="image/jpeg"
+                  media="(min-width: 1200px)"
+                  sizes="270px"
+                />
+                <source
+                  srcset="
+                    ./images/tablet/team/mykola.jpg    354w,
+                    ./images/tablet/team/mykola@2x.jpg 708w
+                  "
+                  type="image/jpeg"
+                  media="(min-width: 768px)"
+                  sizes="354px"
+                />
+                <source
+                  srcset="
+                    ./images/mobile/team/mykola.jpg    450w,
+                    ./images/mobile/team/mykola@2x.jpg 900w
+                  "
+                  type="image/jpeg"
+                  media="(max-width: 767px)"
+                  sizes="450px"
+                />
+                <img src="./images/mobile/team/mykola.jpg" alt="фото Миколи Тарасова" />
+              </picture>
+              <!-- <img src="./images/mykola.jpg" alt="фото Миколи Тарасова" width="450" height="460" /> -->
               <div class="team__content">
                 <h3 class="team__title">Микола Тарасов</h3>
                 <p lang="en" class="team__text">Marketing</p>
@@ -301,12 +512,69 @@
               </div>
             </li>
             <li class="team__item">
-              <img
+              <picture>
+                <source
+                  srcset="
+                    ./images/desktop/team/mykhailo.webp    270w,
+                    ./images/desktop/team/mykhailo@2x.webp 540w
+                  "
+                  type="image/webp"
+                  media="(min-width: 1200px)"
+                  sizes="270px"
+                />
+                <source
+                  srcset="
+                    ./images/tablet/team/mykhailo.webp    354w,
+                    ./images/tablet/team/mykhailo@2x.webp 708w
+                  "
+                  type="image/webp"
+                  media="(min-width: 768px)"
+                  sizes="354px"
+                />
+                <source
+                  srcset="
+                    ./images/mobile/team/mykhailo.webp 450w,
+                    ./images/mobile/team/mykhailo@2x.webp 900w
+                  "
+                  type="image/webp"
+                  media="(max-width: 767px)"
+                  sizes="450px"
+                />
+                <source
+                  srcset="
+                    ./images/desktop/team/mykhailo.jpg    270w,
+                    ./images/desktop/team/mykhailo@2x.jpg 540w
+                  "
+                  type="image/jpeg"
+                  media="(min-width: 1200px)"
+                  sizes="270px"
+                />
+                <source
+                  srcset="
+                    ./images/tablet/team/mykhailo.jpg    354w,
+                    ./images/tablet/team/mykhailo@2x.jpg 708w
+                  "
+                  type="image/jpeg"
+                  media="(min-width: 768px)"
+                  sizes="354px"
+                />
+                <source
+                  srcset="
+                    ./images/mobile/team/mykhailo.jpg    450w,
+                    ./images/mobile/team/mykhailo@2x.jpg 900w
+                  "
+                  type="image/jpeg"
+                  media="(max-width: 767px)"
+                  sizes="450px"
+                />
+                <img src="./images/mobile/team/mykhailo.jpg" alt="фото Михайла Єрмакова" />
+              </picture>
+              <!-- <img
                 src="./images/mykhailo.jpg"
                 alt="фото Михайла Єрмакова"
                 width="450"
                 height="460"
-              />
+              /> -->
               <div class="team__content">
                 <h3 class="team__title">Михайло Єрмаков</h3>
                 <p lang="en" class="team__text">UI Designer</p>
@@ -483,7 +751,66 @@
         </div>
       </div>
     </footer>
-
+    <!-- Мобільне меню -->
+    <div class="mobile-menu js-menu-container" id="mobile-menu">
+      <button class="mobile-menu__close-button js-close-menu">
+        <svg class="mobile-menu__icon" width="40" height="40">
+          <use href="./images/icons.svg#icon-cross"></use>
+        </svg>
+      </button>
+      <nav class="mobile-menu__nav">
+        <ul class="mobile-menu__list mobile-nav">
+          <li class="mobile-nav__item">
+            <a
+              href="./index.html"
+              class="mobile-nav__link mobile-nav__link--current link"
+              aria-current="true"
+              >Студія</a
+            >
+          </li>
+          <li class="mobile-nav__item">
+            <a href="./portfolio.html" class="mobile-nav__link link">Портфоліо</a>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="./contacts" class="mobile-nav__link link">Контакти</a>
+          </li>
+        </ul>
+        <div class="mobile-menu__container">
+          <ul class="mobile-menu__list mobile-contacts">
+            <li class="mobile-contacts__item">
+              <a href="tel:+380961111111" class="mobile-contacts__phone link"> +38 096 111 11 11</a>
+            </li>
+            <li class="mobile-contacts__item">
+              <a href="mailto:info@devstudio.com" class="mobile-contacts__email link">
+                info@devstudio.com</a
+              >
+            </li>
+          </ul>
+          <ul class="mobile-menu__list mobile-social">
+            <li class="mobile-social__item">
+              <a href="#" class="mobile-social__link link" aria-label="Instagram" lang="en"
+                >Instagram
+              </a>
+            </li>
+            <li class="mobile-social__item">
+              <a href="#" class="mobile-social__link link-line link" aria-label="Twitter"
+                >Twitter
+              </a>
+            </li>
+            <li class="mobile-social__item">
+              <a href="#" class="mobile-social__link link-line link" aria-label="Facebook"
+                >Facebook
+              </a>
+            </li>
+            <li class="mobile-social__item">
+              <a href="#" class="mobile-social__link link-line link" aria-label="Linkedin"
+                >Linkedin
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
     <!-- Модальне вікно -->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
@@ -573,6 +900,6 @@
       </div>
     </div>
     <script src="./js/modal.js"></script>
-    <!-- <script src="./js/mobile-menu.js"></script> -->
+    <script defer src="./js/mobile-menu.js"></script>
   </body>
 </html>

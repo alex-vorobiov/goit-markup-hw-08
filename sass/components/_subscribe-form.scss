@@ -5,7 +5,7 @@
     align-items: center;
     gap: 20px;
 
-    @media screen and (min-width: $desktop) {
+    @include for-desktop-up {
         width: 570px;
         flex-direction: row;
         margin-left: auto;
@@ -20,7 +20,7 @@
         width: 100%;
         gap: 20px;
 
-        @media screen and (min-width: $desktop) {
+        @include for-desktop-up {
             align-items: flex-start;
         }
 
@@ -37,7 +37,7 @@
         max-width: 450px;
         width: 100%;
 
-        @media screen and (min-width: $desktop) {
+        @include for-desktop-up {
             width: 358px;
         }
 

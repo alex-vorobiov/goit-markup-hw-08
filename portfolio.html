@@ -9,57 +9,65 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
     />
-    <link rel="stylesheet" href="./css/main.min.css">
+    <link rel="stylesheet" href="./css/main.min.css" />
   </head>
   <body>
     <!-- Шапка сторінки -->
     <header class="header">
       <div class="container">
-        <div class="header__container">
-          <nav class="header__nav">
-            <a class="logo header__logo link" href="./index.html">
-              Web<span class="header__half-logo">Studio</span></a
-            >
-            <!-- <ul class="site-nav">
+        <nav class="header__nav">
+          <a class="logo header__logo link" href="./index.html">
+            Web<span class="header__half-logo">Studio</span></a
+          >
+          <button
+            type="button"
+            class="menu-button js-open-menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Перемикач мобільного меню"
+          >
+            <svg width="40" height="40">
+              <use class="icon-menu" href="./images/icons.svg#icon-menu"></use>
+            </svg>
+          </button>
+          <div class="header__container">
+            <ul class="site-nav">
               <li class="site-nav__item">
-                <a href="./index.html" class="site-nav__link link">Студія</a>
+                <a href="./index.html" class="site-nav__link link" aria-current="true">Студія</a>
               </li>
               <li class="site-nav__item">
-                <a
-                  href="./portfolio.html"
-                  class="site-nav__link site-nav__link--current link"
-                  aria-current="true"
+                <a href="./portfolio.html" class="site-nav__link site-nav__link--current link"
                   >Портфоліо</a
                 >
               </li>
               <li class="site-nav__item">
                 <a href="./contacts" class="site-nav__link link">Контакти</a>
               </li>
-            </ul> -->
-          </nav>
-          <!-- <ul class="contacts">
-            <li class="contacts__item">
-              <a href="mailto:info@devstudio.com" class="contacts__link link">
-                <div class="contacts__box">
-                  <svg class="contacts__icon" width="16" height="12">
-                    <use href="./images/icons.svg#icon-envelope"></use>
-                  </svg>
-                </div>
-                info@devstudio.com</a
-              >
-            </li>
-            <li class="contacts__item">
-              <a href="tel:+380961111111" class="contacts__link link">
-                <div class="contacts__box">
-                  <svg class="contacts__icon" width="10" height="16">
-                    <use href="./images/icons.svg#icon-smartphone"></use>
-                  </svg>
-                </div>
-                +38 096 111 11 11</a
-              >
-            </li>
-          </ul> -->
-        </div>
+            </ul>
+            <ul class="contacts">
+              <li class="contacts__item">
+                <a href="mailto:info@devstudio.com" class="contacts__link link">
+                  <div class="contacts__box">
+                    <svg class="contacts__icon" width="16" height="12">
+                      <use href="./images/icons.svg#icon-envelope"></use>
+                    </svg>
+                  </div>
+                  info@devstudio.com</a
+                >
+              </li>
+              <li class="contacts__item">
+                <a href="tel:+380961111111" class="contacts__link link">
+                  <div class="contacts__box">
+                    <svg class="contacts__icon" width="10" height="16">
+                      <use href="./images/icons.svg#icon-smartphone"></use>
+                    </svg>
+                  </div>
+                  +38 096 111 11 11</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
     </header>
     <!-- Основна частина -->
@@ -68,7 +76,9 @@
         <div class="container">
           <h1 class="portfolio__heading portfolio__heading--visually-hidden">Наші проекти</h1>
           <ul class="filter">
-            <li class="filter__item"><button type="button" class="filter__button filter__button--wider">Усі</button></li>
+            <li class="filter__item">
+              <button type="button" class="filter__button filter__button--wider">Усі</button>
+            </li>
             <li class="filter__item">
               <button type="button" class="filter__button">Веб-сайти</button>
             </li>
@@ -86,12 +96,66 @@
             <li class="portfolio__item">
               <a href="" class="project">
                 <div class="project__thumb">
-                  <img
-                    src="./images/project1.jpg"
-                    alt="Сторінка сайту з працівниками відкрита на ноутбуці Macbook Pro"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/desktop/projects/project1.webp    370w,
+                        ./images/desktop/projects/project1@2x.webp 740w
+                      "
+                      type="image/webp"
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/projects/project1.webp    354w,
+                        ./images/tablet/projects/project1@2x.webp 708w
+                      "
+                      type="image/webp"
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/projects/project1.webp    450w,
+                        ./images/mobile/projects/project1@2x.webp 900w
+                      "
+                      type="image/webp"
+                      media="(max-width: 767px)"
+                      sizes="450px"
+                    />
+                    <source
+                      srcset="
+                        ./images/desktop/projects/project1.jpg    370w,
+                        ./images/desktop/projects/project1@2x.jpg 740w
+                      "
+                      type="image/jpeg"
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/projects/project1.jpg    354w,
+                        ./images/tablet/projects/project1@2x.jpg 708w
+                      "
+                      type="image/jpeg"
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/projects/project1.jpg    450w,
+                        ./images/mobile/projects/project1@2x.jpg 900w
+                      "
+                      type="image/jpeg"
+                      media="(max-width: 767px)"
+                      sizes="450px"
+                    />
+                    <img
+                      src="./images/mobile/projects/project1.jpg"
+                      alt="Сторінка сайту з працівниками відкрита на ноутбуці Macbook Pro"
+                    />
+                  </picture>
                   <div class="project__overlay">
                     <p class="project__text">
                       Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
@@ -109,12 +173,66 @@
             <li class="portfolio__item">
               <a href="" class="project">
                 <div class="project__thumb">
-                  <img
-                    src="./images/project2.jpg"
-                    alt="Баскетбольні гравці з м'ячем"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/desktop/projects/project2.webp    370w,
+                        ./images/desktop/projects/project2@2x.webp 740w
+                      "
+                      type="image/webp"
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/projects/project2.webp    354w,
+                        ./images/tablet/projects/project2@2x.webp 708w
+                      "
+                      type="image/webp"
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/projects/project2.webp    450w,
+                        ./images/mobile/projects/project2@2x.webp 900w
+                      "
+                      type="image/webp"
+                      media="(max-width: 767px)"
+                      sizes="450px"
+                    />
+                    <source
+                      srcset="
+                        ./images/desktop/projects/project2.jpg    370w,
+                        ./images/desktop/projects/project2@2x.jpg 740w
+                      "
+                      type="image/jpeg"
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/projects/project2.jpg    354w,
+                        ./images/tablet/projects/project2@2x.jpg 708w
+                      "
+                      type="image/jpeg"
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/projects/project2.jpg    450w,
+                        ./images/mobile/projects/project2@2x.jpg 900w
+                      "
+                      type="image/jpeg"
+                      media="(max-width: 767px)"
+                      sizes="450px"
+                    />
+                    <img
+                      src="./images/mobile/projects/project2.jpg"
+                      alt="Баскетбольні гравці з м'ячем"
+                    />
+                  </picture>
                   <div class="project__overlay">
                     <p class="project__text">
                       Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
@@ -134,12 +252,67 @@
             <li class="portfolio__item">
               <a href="" class="project">
                 <div class="project__thumb">
-                  <img
-                    src="./images/project3.jpg"
-                    alt="Логотип ресторану The Seafood"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/desktop/projects/project3.webp    370w,
+                        ./images/desktop/projects/project3@2x.webp 740w
+                      "
+                      type="image/webp"
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/projects/project3.webp    354w,
+                        ./images/tablet/projects/project3@2x.webp 708w
+                      "
+                      type="image/webp"
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/projects/project3.webp    450w,
+                        ./images/mobile/projects/project3@2x.webp 900w
+                      "
+                      type="image/webp"
+                      media="(max-width: 767px)"
+                      sizes="450px"
+                    />
+                    <source
+                      srcset="
+                        ./images/desktop/projects/project3.jpg    370w,
+                        ./images/desktop/projects/project3@2x.jpg 740w
+                      "
+                      type="image/jpeg"
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/projects/project3.jpg    354w,
+                        ./images/tablet/projects/project3@2x.jpg 708w
+                      "
+                      type="image/jpeg"
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/projects/project3.jpg    450w,
+                        ./images/mobile/projects/project3@2x.jpg 900w
+                      "
+                      type="image/jpeg"
+                      media="(max-width: 767px)"
+                      sizes="450px"
+                    />
+                    <img
+                      src="./images/mobile/projects/project3.jpg"
+                      alt="Логотип ресторану The Seafood"
+                    />
+                  </picture>
+
                   <div class="project__overlay">
                     <p class="project__text">
                       Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
@@ -157,12 +330,66 @@
             <li class="portfolio__item">
               <a href="" class="project">
                 <div class="project__thumb">
-                  <img
-                    src="./images/project4.jpg"
-                    alt="Навушники с великими амбушюрами"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/desktop/projects/project4.webp    370w,
+                        ./images/desktop/projects/project4@2x.webp 740w
+                      "
+                      type="image/webp"
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/projects/project4.webp    354w,
+                        ./images/tablet/projects/project4@2x.webp 708w
+                      "
+                      type="image/webp"
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/projects/project4.webp    450w,
+                        ./images/mobile/projects/project4@2x.webp 900w
+                      "
+                      type="image/webp"
+                      media="(max-width: 767px)"
+                      sizes="450px"
+                    />
+                    <source
+                      srcset="
+                        ./images/desktop/projects/project4.jpg    370w,
+                        ./images/desktop/projects/project4@2x.jpg 740w
+                      "
+                      type="image/jpeg"
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/projects/project4.jpg    354w,
+                        ./images/tablet/projects/project4@2x.jpg 708w
+                      "
+                      type="image/jpeg"
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/projects/project4.jpg    450w,
+                        ./images/mobile/projects/project4@2x.jpg 900w
+                      "
+                      type="image/jpeg"
+                      media="(max-width: 767px)"
+                      sizes="450px"
+                    />
+                    <img
+                      src="./images/mobile/projects/project4.jpg"
+                      alt="Навушники с великими амбушюрами"
+                    />
+                  </picture>
                   <div class="project__overlay">
                     <p class="project__text">
                       Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
@@ -180,12 +407,66 @@
             <li class="portfolio__item">
               <a href="" class="project">
                 <div class="project__thumb">
-                  <img
-                    src="./images/project5.jpg"
-                    alt="Біла та коричнева коробки"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/desktop/projects/project5.webp    370w,
+                        ./images/desktop/projects/project5@2x.webp 740w
+                      "
+                      type="image/webp"
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/projects/project5.webp    354w,
+                        ./images/tablet/projects/project5@2x.webp 708w
+                      "
+                      type="image/webp"
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/projects/project5.webp    450w,
+                        ./images/mobile/projects/project5@2x.webp 900w
+                      "
+                      type="image/webp"
+                      media="(max-width: 767px)"
+                      sizes="450px"
+                    />
+                    <source
+                      srcset="
+                        ./images/desktop/projects/project5.jpg    370w,
+                        ./images/desktop/projects/project5@2x.jpg 740w
+                      "
+                      type="image/jpeg"
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/projects/project5.jpg    354w,
+                        ./images/tablet/projects/project5@2x.jpg 708w
+                      "
+                      type="image/jpeg"
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/projects/project5.jpg    450w,
+                        ./images/mobile/projects/project5@2x.jpg 900w
+                      "
+                      type="image/jpeg"
+                      media="(max-width: 767px)"
+                      sizes="450px"
+                    />
+                    <img
+                      src="./images/mobile/projects/project5.jpg"
+                      alt="Біла та коричнева коробки"
+                    />
+                  </picture>
                   <div class="project__overlay">
                     <p class="project__text">
                       Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
@@ -203,12 +484,66 @@
             <li class="portfolio__item">
               <a href="" class="project">
                 <div class="project__thumb">
-                  <img
-                    src="./images/project6.jpg"
-                    alt="Сторінка сайту з працівниками відкрита на моніторі Apple"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/desktop/projects/project6.webp    370w,
+                        ./images/desktop/projects/project6@2x.webp 740w
+                      "
+                      type="image/webp"
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/projects/project6.webp    354w,
+                        ./images/tablet/projects/project6@2x.webp 708w
+                      "
+                      type="image/webp"
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/projects/project6.webp    450w,
+                        ./images/mobile/projects/project6@2x.webp 900w
+                      "
+                      type="image/webp"
+                      media="(max-width: 767px)"
+                      sizes="450px"
+                    />
+                    <source
+                      srcset="
+                        ./images/desktop/projects/project6.jpg    370w,
+                        ./images/desktop/projects/project6@2x.jpg 740w
+                      "
+                      type="image/jpeg"
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/projects/project6.jpg    354w,
+                        ./images/tablet/projects/project6@2x.jpg 708w
+                      "
+                      type="image/jpeg"
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/projects/project6.jpg    450w,
+                        ./images/mobile/projects/project6@2x.jpg 900w
+                      "
+                      type="image/jpeg"
+                      media="(max-width: 767px)"
+                      sizes="450px"
+                    />
+                    <img
+                      src="./images/mobile/projects/project6.jpg"
+                      alt="Сторінка сайту з перевагами компанії відкрита на моніторі Apple"
+                    />
+                  </picture>
                   <div class="project__overlay">
                     <p class="project__text">
                       Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
@@ -226,12 +561,66 @@
             <li class="portfolio__item">
               <a href="" class="project">
                 <div class="project__thumb">
-                  <img
-                    src="./images/project7.jpg"
-                    alt="Відкрита книга з малюнками"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/desktop/projects/project7.webp    370w,
+                        ./images/desktop/projects/project7@2x.webp 740w
+                      "
+                      type="image/webp"
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/projects/project7.webp    354w,
+                        ./images/tablet/projects/project7@2x.webp 708w
+                      "
+                      type="image/webp"
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/projects/project7.webp    450w,
+                        ./images/mobile/projects/project7@2x.webp 900w
+                      "
+                      type="image/webp"
+                      media="(max-width: 767px)"
+                      sizes="450px"
+                    />
+                    <source
+                      srcset="
+                        ./images/desktop/projects/project7.jpg    370w,
+                        ./images/desktop/projects/project7@2x.jpg 740w
+                      "
+                      type="image/jpeg"
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/projects/project7.jpg    354w,
+                        ./images/tablet/projects/project7@2x.jpg 708w
+                      "
+                      type="image/jpeg"
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/projects/project7.jpg    450w,
+                        ./images/mobile/projects/project7@2x.jpg 900w
+                      "
+                      type="image/jpeg"
+                      media="(max-width: 767px)"
+                      sizes="450px"
+                    />
+                    <img
+                      src="./images/mobile/projects/project7.jpg"
+                      alt="Відкрита книга з малюнками"
+                    />
+                  </picture>
                   <div class="project__overlay">
                     <p class="project__text">
                       Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
@@ -249,7 +638,63 @@
             <li class="portfolio__item">
               <a href="" class="project">
                 <div class="project__thumb">
-                  <img src="./images/project8.jpg" alt="Біла етикетка" width="370" height="294" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/desktop/projects/project8.webp    370w,
+                        ./images/desktop/projects/project8@2x.webp 740w
+                      "
+                      type="image/webp"
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/projects/project8.webp    354w,
+                        ./images/tablet/projects/project8@2x.webp 708w
+                      "
+                      type="image/webp"
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/projects/project8.webp    450w,
+                        ./images/mobile/projects/project8@2x.webp 900w
+                      "
+                      type="image/webp"
+                      media="(max-width: 767px)"
+                      sizes="450px"
+                    />
+                    <source
+                      srcset="
+                        ./images/desktop/projects/project8.jpg    370w,
+                        ./images/desktop/projects/project8@2x.jpg 740w
+                      "
+                      type="image/jpeg"
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/projects/project8.jpg    354w,
+                        ./images/tablet/projects/project8@2x.jpg 708w
+                      "
+                      type="image/jpeg"
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/projects/project8.jpg    450w,
+                        ./images/mobile/projects/project8@2x.jpg 900w
+                      "
+                      type="image/jpeg"
+                      media="(max-width: 767px)"
+                      sizes="450px"
+                    />
+                    <img src="./images/mobile/projects/project8.jpg" alt="Біла етикетка" />
+                  </picture>
                   <div class="project__overlay">
                     <p class="project__text">
                       Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
@@ -267,12 +712,66 @@
             <li class="portfolio__item">
               <a href="" class="project">
                 <div class="project__thumb">
-                  <img
-                    src="./images/project9.jpg"
-                    alt="Людина використовує додаток на ноутбуці"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/desktop/projects/project9.webp    370w,
+                        ./images/desktop/projects/project9@2x.webp 740w
+                      "
+                      type="image/webp"
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/projects/project9.webp    354w,
+                        ./images/tablet/projects/project9@2x.webp 708w
+                      "
+                      type="image/webp"
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/projects/project9.webp    450w,
+                        ./images/mobile/projects/project9@2x.webp 900w
+                      "
+                      type="image/webp"
+                      media="(max-width: 767px)"
+                      sizes="450px"
+                    />
+                    <source
+                      srcset="
+                        ./images/desktop/projects/project9.jpg    370w,
+                        ./images/desktop/projects/project9@2x.jpg 740w
+                      "
+                      type="image/jpeg"
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/projects/project9.jpg    354w,
+                        ./images/tablet/projects/project9@2x.jpg 708w
+                      "
+                      type="image/jpeg"
+                      media="(min-width: 768px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/projects/project9.jpg    450w,
+                        ./images/mobile/projects/project9@2x.jpg 900w
+                      "
+                      type="image/jpeg"
+                      media="(max-width: 767px)"
+                      sizes="450px"
+                    />
+                    <img
+                      src="./images/mobile/projects/project9.jpg"
+                      alt="Людина використовує додаток на ноутбуці"
+                    />
+                  </picture>
                   <div class="project__overlay">
                     <p class="project__text">
                       Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
@@ -378,5 +877,63 @@
         </div>
       </div>
     </footer>
+    <!-- Мобільне меню -->
+    <div class="mobile-menu js-menu-container" id="mobile-menu">
+      <button class="mobile-menu__close-button js-close-menu">
+        <svg class="mobile-menu__icon" width="40" height="40">
+          <use href="./images/icons.svg#icon-cross"></use>
+        </svg>
+      </button>
+      <nav class="mobile-menu__nav">
+        <ul class="mobile-menu__list mobile-nav">
+          <li class="mobile-nav__item">
+            <a href="./index.html" class="mobile-nav__link link" aria-current="true">Студія</a>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="./portfolio.html" class="mobile-nav__link mobile-nav__link--current link"
+              >Портфоліо</a
+            >
+          </li>
+          <li class="mobile-nav__item">
+            <a href="./contacts" class="mobile-nav__link link">Контакти</a>
+          </li>
+        </ul>
+        <div class="mobile-menu__container">
+          <ul class="mobile-menu__list mobile-contacts">
+            <li class="mobile-contacts__item">
+              <a href="tel:+380961111111" class="mobile-contacts__phone link"> +38 096 111 11 11</a>
+            </li>
+            <li class="mobile-contacts__item">
+              <a href="mailto:info@devstudio.com" class="mobile-contacts__email link">
+                info@devstudio.com</a
+              >
+            </li>
+          </ul>
+          <ul class="mobile-menu__list mobile-social">
+            <li class="mobile-social__item">
+              <a href="#" class="mobile-social__link link" aria-label="Instagram" lang="en"
+                >Instagram
+              </a>
+            </li>
+            <li class="mobile-social__item">
+              <a href="#" class="mobile-social__link link-line link" aria-label="Twitter"
+                >Twitter
+              </a>
+            </li>
+            <li class="mobile-social__item">
+              <a href="#" class="mobile-social__link link-line link" aria-label="Facebook"
+                >Facebook
+              </a>
+            </li>
+            <li class="mobile-social__item">
+              <a href="#" class="mobile-social__link link-line link" aria-label="Linkedin"
+                >Linkedin
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>

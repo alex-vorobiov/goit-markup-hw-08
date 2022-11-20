@@ -8,12 +8,12 @@
     margin-bottom: 40px;
     list-style: none;
 
-    @media screen and (min-width: $tablet) {
+    @include for-tablet-up {
         justify-content: center;
         margin-bottom: 30px;
     }
 
-    @media screen and (min-width: $desktop) {
+    @include for-desktop-up {
         margin-bottom: 50px;
     }
 }
