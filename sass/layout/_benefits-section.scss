@@ -57,6 +57,10 @@
 
         color: $color-text-title;
         text-transform: uppercase;
+
+        @include for-tablet-up {
+            text-align: left;
+        }
     }
 
     &__text {
