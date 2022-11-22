@@ -2,6 +2,7 @@
     position: fixed;
     top: 0;
     left: 0;
+    padding: 40px 15px;
     width: 100%;
     height: 100%;
 
@@ -10,10 +11,6 @@
     overflow-y: scroll;
     
     @include transition(opacity, visibility);
-
-    @include for-mobile-only {
-        padding: 15px;
-    }
 
     &.is-hidden {
         opacity: 0;
@@ -24,7 +21,7 @@
 
 .modal {
     position: relative;
-    
+    margin: 0 auto;
     padding: 40px;
     
     max-width: 450px;
@@ -38,15 +35,7 @@
 
     @include transition(transform);
     
-    @include for-mobile-only {
-        margin: 0 auto;
-    }
-
-    @include for-mobile-up {
-        max-height: 609px;
-    }
-
-    @include for-tablet-up {
+    @include for-desktop-up {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -89,7 +78,7 @@
     .backdrop.is-hidden & {
         transform: scale(1.2);
 
-        @include for-tablet-up {
+        @include for-desktop-up {
             transform: translate(-50%, -50%) scale(1.2);
         }
     }
